@@ -1,0 +1,42 @@
+#navbar{
+    background-color:rgb(37, 35, 35);
+    height: 35px;
+    padding-top:12px;
+    padding-left: 15px;
+}
+.navitem{
+    color: rgb(230, 217, 217);
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+
+}
+table,th,td{
+    border: 1px solid rgb(179, 168, 168);
+    border-spacing: 0px;
+}
+#fname{
+    background-color: rgb(200, 221, 230);
+    font-size: large;
+    border-color: rgb(224, 224, 216);
+}
+#lname{
+    background-color: rgb(200, 221, 230);
+    font-size: large;
+    border-color: rgb(224, 224, 216);
+}
+#done{
+    font-size: large;
+    
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+.grid-item{
+    padding: 30px;
+}
+body{
+    font-size: large;
+}
