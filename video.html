@@ -3,33 +3,67 @@
     <head>
         <link rel="stylesheet" href="text.css">
         <title>video</title>
+        <!-- <script src="script.js"></script> -->
     </head>
-    <body>
+    <body onload="init()">
+        <div id="overlayVid" onclick="off()"></div>
         <nav id="navbar">
-            <a href="index.html" class="navitem">Text</a>
-            <a href="image.html" class="navitem">Image</a>
+            <a href="index.html" >Text</a>
+            <a href="image.html" >Image</a>
             <a href="video.html" class="navitem">Video</a>
-            <a href="table.html" class="navitem">Table</a>
+            <a href="table.html" >Table</a>
         </nav>
         <div class="grid-container">
             <div class="grid-item">
-                <video width="300" height="300" controls>
+                <video width="300" height="300"  onclick="on('v1.mp4')" controls>
                     <source src="v1.mp4" type="video/mp4">
                 </video>
                 
             </div>
             <div class="grid-item">
-                <video width="300" height="300" controls>
+                <video width="300" height="300" onclick="on('v2.mp4')" controls>
                     <source src="v2.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="grid-item">
-                <video width="300" height="300" controls>
+                <video width="300" height="300" onclick="on('v3.mp4')" controls>
                     <source src="v3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="grid-item">
+                <video width="300" height="300" onclick="on('v4.mp4')" controls>
+                    <source src="v4.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="grid-item">
+                <video width="300" height="300" onclick="on('v5.mp4')" controls>
+                    <source src="v5.mp4" type="video/mp4">
                 </video>
             </div>
             
         </div>
+        <button id="backBtn">Back to Top</button>
+        <script>
+            function on(src){
+                document.getElementById("overlayVid").style.display = "block";
+                const overlay = document.querySelector("#overlayVid");
+                var vid = document.createElement("VIDEO");
+                vid.setAttribute("src", src);
+                vid.setAttribute("width", "50%");
+                vid.setAttribute("height", "50%");
+                vid.setAttribute("style", "display: block;");
+                vid.setAttribute("controls", "controls");
+                vid.setAttribute("style", "left:50%; top:50%; transform: translate(-50%, -50%); position:absolute; ");
+               
+                overlay.appendChild(vid);
+            }
+            function off(){
+                document.getElementById("overlayVid").style.display = "none";
+                const overlay = document.querySelector("#overlayVid");
+                overlay.removeChild(overlay.lastChild);
+            }
+        </script>
+        <script src="script.js"></script>
     
     </body>
 </html> 
