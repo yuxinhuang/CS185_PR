@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="text.css">
+        <title>image</title>
+        <!-- <script src="script.js"></script> -->
+        
+    </head>
+    <body onload="init()">
+        <div id="overlayImg" onclick="off()"></div>
+        <nav id="navbar">
+            <a href="index.html" >Text</a>
+            <a href="image.html" class="navitem">Image</a>
+            <a href="video.html" >Video</a>
+            <a href="table.html" >Table</a>
+            <a href="email.html" >Email</a>
+        </nav>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="img1.jpeg" width="300" height="300" onclick="on('img1.jpeg')">
+                
+            </div>
+            <div class="grid-item">
+                <img src="img2.jpg" width="300" height="300" onclick="on('img2.jpg')">
+            </div>
+            <div class="grid-item">
+                <img src="img3.jpg" width="300" height="300" onclick="on('img3.jpg')">
+            </div>
+            <div class="grid-item">
+                <img src="img4.jpg" width="300" height="300" onclick="on('img4.jpg')">
+            </div>
+            <div class="grid-item">
+                <img src="img5.jpg" width="300" height="300" onclick="on('img5.jpg')">
+            </div>
+            <div class="grid-item">
+                <img src="img6.jpg" width="300" height="300" onclick="on('img6.jpg')" >
+            </div>
+        </div>
+        <button id="backBtn">Back to Top</button>
+        <script>
+            function on(src){
+                document.getElementById("overlayImg").style.display = "block";
+                const overlay = document.querySelector("#overlayImg");
+                var img = document.createElement("IMG")
+                img.setAttribute("src", src)
+                img.setAttribute("width", "50%")
+                img.setAttribute("height", "50%")
+                //img.setAttribute("style", "display: block; margin:auto; position:flex; ")
+                //img.setAttribute("style", "margin-left: 25%; margin-top: 25%;")
+                img.setAttribute("style", "left:50%; top:50%; transform: translate(-50%, -50%); position:absolute; ")
+                
+               
+                overlay.appendChild(img)
+            }
+            function off(){
+                document.getElementById("overlayImg").style.display = "none";
+                const overlay = document.querySelector("#overlayImg");
+                overlay.removeChild(overlay.lastChild);
+            }
+        </script>
+        <script src="script.js"></script>
+    
+    </body>
+</html> 
